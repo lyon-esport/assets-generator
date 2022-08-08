@@ -43,6 +43,12 @@ DJANGO_SETTINGS_MODULE="les_assets_generator.assets_generator.settings.productio
 # Database URL following https://github.com/jazzband/dj-database-url#url-schema
 DATABASE_URL="sqlite:////opt//assets-generator//db.sqlite3"
 
+# Folder that store static files
+DJANGO_STATIC_ROOT="/var/www/assets-generator/static"
+
+# Folder that store media files
+DJANGO_MEDIA_ROOT="/var/www/assets-generator/media"
+
 # Django allowed host like .lyon-esport.fr
 DJANGO_ALLOWED_HOST=""
 
