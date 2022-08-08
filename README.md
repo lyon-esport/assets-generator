@@ -21,7 +21,6 @@ Install and setup dependencies
 poetry install
 poetry shell
 pre-commit install
-
 ```
 
 ### Run pre-commit
@@ -35,6 +34,7 @@ pre-commit run --all-files
 Set the environnement for production (.env file or env vars)
 
 Dev: les_assets_generator.assets_generator.settings.dev
+
 Prod: les_assets_generator.assets_generator.settings.production
 
 ```dotenv
@@ -59,13 +59,13 @@ GOOGLE_DOMAIN=""
 # Run
 
     $ export DJANGO_SETTINGS_MODULE="les_assets_generator.assets_generator.settings.production"
-    $ cd les_assets_generator
     $ python -m les_assets_generator.manage makemigrations
     $ python -m les_assets_generator.manage migrate
     $ python -m les_assets_generator.manage compilemessages
 
 ## Dev
 
+    $ cd les_assets_generator
     $ python -m les_assets_generator.manage runserver
 
 ## Production
