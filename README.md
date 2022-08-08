@@ -32,25 +32,31 @@ pre-commit run --all-files
 # Configuration
 ### Production only
 
-Set the environnement for production (.env file or env vars)
+Set the environnement for production (.env file or env vars)  
+
+Dev: les_assets_generator.assets_generator.settings.dev  
+Prod: les_assets_generator.assets_generator.settings.production  
 
 ```dotenv
+DJANGO_SETTINGS_MODULE="les_assets_generator.assets_generator.settings.production"
+
+# Database URL following https://github.com/jazzband/dj-database-url#url-schema
+DATABASE_URL="sqlite:////opt//assets-generator//db.sqlite3"
+
 # Django allowed host like .lyon-esport.fr
-DJANGO_ALLOWED_HOST = ""
+DJANGO_ALLOWED_HOST=""
 
 # Django log level
-DJANGO_LOG_LEVEL = ""
+DJANGO_LOG_LEVEL=""
 
 # Set the secret key for session and other thinks
-SECRET_KEY = ""
+SECRET_KEY=""
 
 # Set allowed google email domain like lyon-esport.fr
-GOOGLE_DOMAIN = ""
+GOOGLE_DOMAIN=""
 ```
 
 # Run
-Dev: les_assets_generator.assets_generator.settings.dev
-Prod: les_assets_generator.assets_generator.settings.production
 
     $ export DJANGO_SETTINGS_MODULE="les_assets_generator.assets_generator.settings.production"
     $ cd les_assets_generator
@@ -64,8 +70,8 @@ Prod: les_assets_generator.assets_generator.settings.production
 
 ## Production
 
-    $ python -m les_assets_generator.manage collectstatic --settings=assets_generator.settings.production --noinput
-    $ gunicorn les_assets_generator.assets_generator.wsgi:application --bind 0.0.0.0:8000 --workers 3
+    $ python -m les_assets_generator.manage collectstatic --noinput
+    $ gunicorn les_assets_generator.assets_generator.wsgi:application --bind localhost:8000 --workers 3
 
 # i18n
 https://docs.djangoproject.com/en/4.1/topics/i18n/translation/#message-files
