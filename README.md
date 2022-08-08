@@ -32,10 +32,10 @@ pre-commit run --all-files
 # Configuration
 ### Production only
 
-Set the environnement for production (.env file or env vars)  
+Set the environnement for production (.env file or env vars)
 
-Dev: les_assets_generator.assets_generator.settings.dev  
-Prod: les_assets_generator.assets_generator.settings.production  
+Dev: les_assets_generator.assets_generator.settings.dev
+Prod: les_assets_generator.assets_generator.settings.production
 
 ```dotenv
 DJANGO_SETTINGS_MODULE="les_assets_generator.assets_generator.settings.production"
