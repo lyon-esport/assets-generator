@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 09:38+0200\n"
+"POT-Creation-Date: 2022-08-08 16:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,51 +18,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/models.py:7
+#: app/admin.py:20
+msgid "example url"
+msgstr "url d'exemple"
+
+#: app/admin.py:25
+msgid "Can't determine example URL for now"
+msgstr "Impossible de déterminer un url d'exemple pour le moment"
+
+#: app/models.py:11
 msgid "title"
 msgstr "titre"
 
-#: app/models.py:8
+#: app/models.py:12
 msgid "picture"
 msgstr "image"
 
-#: app/models.py:14
+#: app/models.py:29
 msgid "asset"
 msgstr "asset"
 
-#: app/models.py:15
+#: app/models.py:30
 msgid "assets"
 msgstr "assets"
 
-#: app/models.py:20
+#: app/models.py:35
 msgid "name"
 msgstr "nom"
 
-#: app/models.py:21
+#: app/models.py:36
 msgid "color"
 msgstr "couleur"
 
-#: app/models.py:22
+#: app/models.py:37
 msgid "font url"
 msgstr "url de la police"
 
-#: app/models.py:23
+#: app/models.py:38
 msgid "font size"
 msgstr "taille de la police"
 
-#: app/models.py:35
+#: app/models.py:50
 msgid "parameter"
 msgstr "paramètre"
 
-#: app/models.py:36
+#: app/models.py:51
 msgid "parameters"
 msgstr "paramètres"
 
-#: assets_generator/settings/base.py:144
+#: assets_generator/settings/base.py:145
 msgid "English"
 msgstr "Anglais"
 
-#: assets_generator/settings/base.py:145
+#: assets_generator/settings/base.py:146
 msgid "French"
 msgstr "Français"
 

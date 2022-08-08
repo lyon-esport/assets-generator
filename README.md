@@ -60,6 +60,9 @@ DJANGO_LOG_LEVEL=""
 # Set the secret key for session and other thinks
 SECRET_KEY=""
 
+# Used to generate example URL in django admin like https://assets.lyon-esport.fr
+DEFAULT_DOMAIN=""
+
 # Set allowed google email domain like lyon-esport.fr
 GOOGLE_DOMAIN=""
 ```
