@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-07 22:40+0200\n"
+"POT-Creation-Date: 2022-08-08 09:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/models.py:8
+#: app/models.py:7
 msgid "title"
 msgstr "titre"
 
-#: app/models.py:9
+#: app/models.py:8
 msgid "picture"
 msgstr "image"
 
-#: app/models.py:15
+#: app/models.py:14
 msgid "asset"
 msgstr "asset"
 
-#: app/models.py:16
+#: app/models.py:15
 msgid "assets"
 msgstr "assets"
 
@@ -50,13 +50,21 @@ msgstr "url de la police"
 msgid "font size"
 msgstr "taille de la police"
 
-#: app/models.py:32
+#: app/models.py:35
 msgid "parameter"
 msgstr "paramètre"
 
-#: app/models.py:33
+#: app/models.py:36
 msgid "parameters"
 msgstr "paramètres"
+
+#: assets_generator/settings/base.py:144
+msgid "English"
+msgstr "Anglais"
+
+#: assets_generator/settings/base.py:145
+msgid "French"
+msgstr "Français"
 
 #: templates/admin/login.html:14
 msgid "Login via Google"

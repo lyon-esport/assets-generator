@@ -4,8 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Asset(models.Model):
-    title = models.CharField(primary_key=True, max_length=200, verbose_name=_("title"))
-    picture = models.ImageField(upload_to="assets", verbose_name=_("picture"))
+    title = models.CharField(_("title"), primary_key=True, max_length=200)
+    picture = models.ImageField(_("picture"), upload_to="assets")
 
     def __str__(self):
         return self.title
@@ -17,10 +17,10 @@ class Asset(models.Model):
 
 class Parameter(models.Model):
     asset = models.ForeignKey(Asset, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, verbose_name=_("name"))
+    name = models.CharField(_("name"), max_length=200)
     color = ColorField(verbose_name=_("color"))
-    font_url = models.URLField(verbose_name=_("font url"))
-    font_size = models.IntegerField(default=0, verbose_name=_("font size"))
+    font_url = models.URLField(_("font url"))
+    font_size = models.IntegerField(_("font size"), default=0)
     x = models.IntegerField(default=0)
     y = models.IntegerField(default=0)
 
