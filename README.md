@@ -2,6 +2,8 @@ Lyon e-Sport assets generator
 
 This website help you to generate assets from an image and GET parameters
 
+[![PyPI](https://img.shields.io/pypi/v/les-assets-generator.svg)](https://pypi.python.org/pypi/les-assets-generator)
+[![PyPI versions](https://img.shields.io/pypi/pyversions/les-assets-generator.svg)](https://pypi.python.org/pypi/les-assets-generator)
 ![Python test](https://github.com/lyon-esport/assets-generator/workflows/Python%20test/badge.svg)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
