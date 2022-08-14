@@ -1,8 +1,11 @@
 from django.contrib import admin
+from django.utils.functional import lazy
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 
-from les_assets_generator.app.models import Asset, Parameter
+from les_assets_generator.app.models import Asset, Font, Parameter
+
+mark_safe_lazy = lazy(mark_safe, str)
 
 
 class ParameterTabularInline(admin.TabularInline):
@@ -26,8 +29,9 @@ class AssetAdmin(admin.ModelAdmin):
             r = instance.generate_example_url()
         else:
             message = _("Can't determine example URL for now")
-            r = mark_safe(f"<span>{message}</span>")
+            r = mark_safe_lazy(f"<span>{message}</span>")
         return r
 
 
+admin.site.register(Font)
 admin.site.register(Asset, AssetAdmin)

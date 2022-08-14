@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.utils.translation import gettext_lazy as _
 
 from les_assets_generator.app import views as app_views
+
+admin.site.site_header = _("Lyon e-Sport assets generator admin")
+admin.site.index_title = _("Assets generator")
+admin.site.site_title = _("admin")
 
 urlpatterns = [
     path("", app_views.index, name="index"),
