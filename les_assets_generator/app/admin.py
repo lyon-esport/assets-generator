@@ -26,7 +26,8 @@ class AssetAdmin(admin.ModelAdmin):
     @admin.display(description=_("example url"))
     def example_url(self, instance):
         if instance.title:
-            r = instance.generate_example_url()
+            url = instance.generate_example_url()
+            r = mark_safe_lazy(f"<a href='{url}'>{url}</a>")
         else:
             message = _("Can't determine example URL for now")
             r = mark_safe_lazy(f"<span>{message}</span>")
