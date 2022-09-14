@@ -1,9 +1,9 @@
 from io import BytesIO
-from urllib.request import urlopen
 from urllib.error import HTTPError
+from urllib.request import urlopen
 
+from django.core.exceptions import PermissionDenied, ValidationError
 from django.core.validators import URLValidator
-from django.core.exceptions import ValidationError, PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.translation import gettext_lazy as _
@@ -55,14 +55,15 @@ def generate(request, title: str):
                     )
                 else:
                     try:
-                        image_to_paste = Image.open(BytesIO(urlopen(param_value).read()))
+                        image_to_paste = Image.open(
+                            BytesIO(urlopen(param_value).read())
+                        )
                         img.paste(image_to_paste, (param.x, param.y))
                     except HTTPError:
                         return HttpResponse(
                             _("Error when loading logo %s" % param_value),
                             status=422,
                         )
-
 
         byte_io = BytesIO()
         img.save(byte_io, "png")
