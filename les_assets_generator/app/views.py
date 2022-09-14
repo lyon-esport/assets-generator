@@ -1,7 +1,9 @@
 from io import BytesIO
 from urllib.request import urlopen
+from urllib.error import HTTPError
 
-from django.core.exceptions import PermissionDenied
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError, PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.translation import gettext_lazy as _
@@ -29,24 +31,38 @@ def generate(request, title: str):
             if param.mandatory and param_value is None:
                 return HttpResponse(_("Missing GET parameter %s" % param), status=422)
             elif param_value is not None:
+                validator = URLValidator()
                 try:
-                    if param.font.font_url:
-                        font_file = urlopen(param.font.font_url)
-                    else:
-                        font_file = param.font.font.path
-                    font = ImageFont.truetype(font_file, param.font_size)
-                except OSError:
-                    return HttpResponse(
-                        _("Font %s not supported" % param.font),
-                        status=422,
+                    validator(param_value)
+                except ValidationError:
+                    try:
+                        if param.font.font_url:
+                            font_file = urlopen(param.font.font_url)
+                        else:
+                            font_file = param.font.font.path
+                        font = ImageFont.truetype(font_file, param.font_size)
+                    except OSError:
+                        return HttpResponse(
+                            _("Font %s not supported" % param.font),
+                            status=422,
+                        )
+                    draw.text(
+                        (param.x, param.y),
+                        param_value,
+                        font=font,
+                        anchor="ms",
+                        fill=param.color,
                     )
-                draw.text(
-                    (param.x, param.y),
-                    param_value,
-                    font=font,
-                    anchor="ms",
-                    fill=param.color,
-                )
+                else:
+                    try:
+                        image_to_paste = Image.open(BytesIO(urlopen(param_value).read()))
+                        img.paste(image_to_paste, (param.x, param.y))
+                    except HTTPError:
+                        return HttpResponse(
+                            _("Error when loading logo %s" % param_value),
+                            status=422,
+                        )
+
 
         byte_io = BytesIO()
         img.save(byte_io, "png")
