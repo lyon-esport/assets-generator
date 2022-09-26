@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-15 00:23+0200\n"
+"POT-Creation-Date: 2022-09-26 09:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/admin.py:23
+#: app/admin.py:26
 msgid "example url"
 msgstr "url d'exemple"
 
-#: app/admin.py:28
+#: app/admin.py:32
 msgid "Can't determine example URL for now"
 msgstr "Impossible de déterminer un url d'exemple pour le moment"
 
@@ -90,15 +90,20 @@ msgstr "paramètre"
 msgid "parameters"
 msgstr "paramètres"
 
-#: app/views.py:34
+#: app/views.py:32
 #, python-format
 msgid "Missing GET parameter %s"
 msgstr "Paramètre GET manquant %s"
 
-#: app/views.py:40
+#: app/views.py:46
 #, python-format
 msgid "Font %s not supported"
 msgstr "Police %s non supportée"
+
+#: app/views.py:64
+#, python-format
+msgid "Error when loading logo %s"
+msgstr "Erreur lors du chargement du logog %s"
 
 #: assets_generator/settings/base.py:144
 msgid "English"

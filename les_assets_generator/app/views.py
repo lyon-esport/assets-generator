@@ -7,6 +7,7 @@ from django.core.validators import URLValidator
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.translation import gettext_lazy as _
+from django.views.decorators.cache import cache_page
 from PIL import Image, ImageDraw, ImageFont
 
 from les_assets_generator.app.models import Asset, Parameter
@@ -16,6 +17,7 @@ def index(request):
     return redirect("https://github.com/lyon-esport/assets-generator")
 
 
+@cache_page(60 * 15)
 def generate(request, title: str):
     asset = get_object_or_404(Asset.objects.select_related(), pk=title)
     if asset.authentication and not request.user.is_authenticated:

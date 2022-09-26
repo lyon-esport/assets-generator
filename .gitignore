@@ -17,3 +17,6 @@ __pycache__/
 
 *.mo
 *.pot
+
+*.png
+*.jpg
