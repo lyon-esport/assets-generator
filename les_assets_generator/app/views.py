@@ -30,19 +30,29 @@ def generate(request, title: str):
 
         for param in params:
             param_value = request.GET.get(param.name)
+            # If param is mandatory
             if param.mandatory and param_value is None:
                 return HttpResponse(_("Missing GET parameter %s" % param), status=422)
             elif param_value is not None:
                 validator = URLValidator()
+                # check if param is an image url
                 try:
                     validator(param_value)
                 except ValidationError:
                     try:
+                        param_font_size = int(
+                            request.GET.get(f"{param.name}_font_size", param.font_size)
+                        )
                         if param.font.font_url:
                             font_file = urlopen(param.font.font_url)
                         else:
                             font_file = param.font.font.path
-                        font = ImageFont.truetype(font_file, param.font_size)
+                        font = ImageFont.truetype(font_file, param_font_size)
+                    except ValueError:
+                        return HttpResponse(
+                            _("%s_font_size must be a number" % param.name),
+                            status=422,
+                        )
                     except OSError:
                         return HttpResponse(
                             _("Font %s not supported" % param.font),
