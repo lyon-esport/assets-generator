@@ -27,7 +27,7 @@ include = [
 python = "^3.8"
 Django = "^4.0.6"
 django-colorfield = ">=0.7.2,<0.9.0"
-django-allauth = "^0.51.0"
+django-allauth = ">=0.51,<0.53"
 Pillow = "^9.2.0"
 dj-database-url = "^1.0.0"
 python-dotenv = ">=0.20,<0.22"
