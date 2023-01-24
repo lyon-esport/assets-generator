@@ -16,7 +16,7 @@ pip install les-assets-generator
 ```
 
 # Dev
-Install [Poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) with version >= 1.2.0a1
+Install [Poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer)
 
 Install and setup dependencies
 ```
