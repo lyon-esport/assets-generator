@@ -26,7 +26,7 @@ include = [
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^4.0.6"
-django-colorfield = ">=0.7.2,<0.10.0"
+django-colorfield = ">=0.7.2,<0.11.0"
 django-allauth = ">=0.51,<0.56"
 Pillow = ">=9.2,<11.0"
 dj-database-url = ">=1,<3"
