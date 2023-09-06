@@ -362,13 +362,13 @@ saml = ["python3-saml (>=1.15.0,<2.0.0)"]
 
 [[package]]
 name = "django-colorfield"
-version = "0.10.0"
+version = "0.10.1"
 description = "color field for django models with a nice color-picker in the admin."
 optional = false
 python-versions = "*"
 files = [
-    {file = "django-colorfield-0.10.0.tar.gz", hash = "sha256:0273777bd282d1277fe7a241cd9f9c4a1224ff8cbb9d386f396f983aa523fd5f"},
-    {file = "django_colorfield-0.10.0-py3-none-any.whl", hash = "sha256:50858017f4462e7459644cd0575b57d924f3f6b12707523f5df70b49181347d0"},
+    {file = "django-colorfield-0.10.1.tar.gz", hash = "sha256:1e862bef9e73308499f366ab61190554fba366aa54d5fb1eba378ed2a04bc93d"},
+    {file = "django_colorfield-0.10.1-py3-none-any.whl", hash = "sha256:00ceb5ef55338a0af131c87a13eca3533a327a6206e02a6c2723c059bcd65ea5"},
 ]
 
 [package.dependencies]
