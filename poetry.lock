@@ -342,22 +342,23 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-allauth"
-version = "0.55.2"
+version = "0.56.0"
 description = "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "django-allauth-0.55.2.tar.gz", hash = "sha256:7b713c9947f1917e5c1c5a106fd6208d2c2c71435542fec6d60b01fd7bada3a8"},
+    {file = "django-allauth-0.56.0.tar.gz", hash = "sha256:53f2f38307d7a5446774b23e8ede55df8b96226ccc493cd5b66780b06cf4dc07"},
 ]
 
 [package.dependencies]
-Django = ">=3.1"
+Django = ">=3.2"
 pyjwt = {version = ">=1.7", extras = ["crypto"]}
 python3-openid = ">=3.0.8"
 requests = ">=2.0.0"
 requests-oauthlib = ">=0.3.0"
 
 [package.extras]
+mfa = ["qrcode (>=7.0.0)"]
 saml = ["python3-saml (>=1.15.0,<2.0.0)"]
 
 [[package]]
@@ -821,4 +822,4 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "a22d78b7f71061e400c3a01ecdffd6a0a739ddfb95cea45a12baa9faf7114a21"
+content-hash = "02d81b336055d745e908dabac8feef064818f0e24557f84a65b82e1cc537ecfd"
